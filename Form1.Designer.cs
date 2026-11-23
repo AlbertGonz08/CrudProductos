@@ -111,6 +111,7 @@
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProductos.Size = new Size(533, 188);
             dgvProductos.TabIndex = 7;
+            dgvProductos.CellClick += dgvProductos_CellClick;
             dgvProductos.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Form1
@@ -128,6 +129,7 @@
             Controls.Add(NombreLbl);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();
