@@ -35,5 +35,25 @@ namespace CrudProductos
         {
 
         }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+       !decimal.TryParse(txtPrecio.Text, out decimal precio))
+            {
+                MessageBox.Show("Escribe un nombre y un precio válido.");
+                return;
+            }
+
+            // Agrega el producto con un Id automático
+            productos.Add(new Producto { Id = siguienteId++, Nombre = txtNombre.Text, Precio = precio });
+            ActualizarGrid();
+            Limpiar();
+        }
+        private void Limpiar()
+        {
+            txtNombre.Clear();
+            txtPrecio.Clear();
+        }
     }
 }
