@@ -80,6 +80,7 @@
             btnCrear.TabIndex = 4;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Click += btnCrear_Click;
             // 
             // btnEditar
             // 
