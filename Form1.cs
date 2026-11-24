@@ -84,5 +84,29 @@ namespace CrudProductos
             dgvProductos.Refresh();
             Limpiar();
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            // Revisa que haya un producto seleccionado en la tabla
+            if (dgvProductos.CurrentRow == null)
+            {
+                MessageBox.Show("Selecciona un producto.");
+                return;
+            }
+
+            // Pide confirmación antes de borrar
+            if (MessageBox.Show("¿Eliminar el producto?", "Confirmar",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                var p = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+                productos.Remove(p);
+                Limpiar();
+            }
+        }
     }
 }

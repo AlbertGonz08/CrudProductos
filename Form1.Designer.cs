@@ -36,6 +36,7 @@
             btnEditar = new Button();
             btnEliminar = new Button();
             dgvProductos = new DataGridView();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
@@ -100,6 +101,7 @@
             btnEliminar.TabIndex = 6;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // dgvProductos
             // 
@@ -116,11 +118,23 @@
             dgvProductos.CellClick += dgvProductos_CellClick;
             dgvProductos.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(301, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(201, 23);
+            label1.TabIndex = 8;
+            label1.Text = "Inventario de Productos";
+            label1.Click += label1_Click_1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 504);
+            Controls.Add(label1);
             Controls.Add(dgvProductos);
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
@@ -147,5 +161,6 @@
         private Button btnEditar;
         private Button btnEliminar;
         private DataGridView dgvProductos;
+        private Label label1;
     }
 }
